@@ -17,6 +17,7 @@
     <file path="/a.sql" changelist="a4b8ee02-72d5-4018-8fc0-4ee1966751ca" time="1373549546765" ignored="false" />
     <file path="/dummy.sql" changelist="a4b8ee02-72d5-4018-8fc0-4ee1966751ca" time="1373549546765" ignored="false" />
     <file path="$PROJECT_DIR$/../../../superSay/trunk/satellite-menu-sample/src/android/view/main.java" changelist="a4b8ee02-72d5-4018-8fc0-4ee1966751ca" time="1373550535421" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../superSay/trunk/satellite-menu-sample/src/android/view/ext/commentActivity.java" changelist="a4b8ee02-72d5-4018-8fc0-4ee1966751ca" time="1373551708078" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
