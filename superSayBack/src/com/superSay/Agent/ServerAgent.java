@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.sql.*;
 
 /**
  * Author:wang jian
@@ -39,7 +40,8 @@ public class ServerAgent extends Thread{
                     String[] str = msg.split("\\|");//分割字符串
                     System.out.println(str[0]);
                     System.out.println(str[1]);
-
+                    insert(str[0],str[1]);
+                        flag= false;
                 }
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -47,4 +49,41 @@ public class ServerAgent extends Thread{
         }
 
     }
+
+    private void insert(String title,String litterSay) {
+        Connection con = getConnection();
+        PreparedStatement pstmt = null;
+       // ResultSet rs = null;
+
+        try {
+            pstmt = con.prepareStatement("insert into littersay(title,littersay) values(?,?)");
+            pstmt.setString(1, title);
+            pstmt.setString(2, litterSay);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        } finally {
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+
+        public static Connection getConnection(){//得到数据库连接
+            Connection conn = null;
+            try{
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/supersay", "root", "liupan");
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+            return conn;
+        }
+
 }

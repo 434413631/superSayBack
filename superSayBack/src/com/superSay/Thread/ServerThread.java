@@ -16,7 +16,7 @@ public class ServerThread extends Thread{
     ServerSocket ss;//ServerSocket的引用
     public void run(){//重写的run方法
         try {
-            ss=new ServerSocket(8083);//监听到8083端口
+            ss=new ServerSocket(8081);//监听到8083端口
         } catch (IOException e1) {//捕获异常
             e1.printStackTrace();//打印异常信息
         }
