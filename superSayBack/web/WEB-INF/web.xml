@@ -7,4 +7,14 @@
     <listener>
         <listener-class>com.superSay.contextListener.contextListener</listener-class>
     </listener>
+    <servlet>
+      <description></description>
+      <display-name>CheckComments</display-name>
+      <servlet-name>CheckComments</servlet-name>
+      <servlet-class>com.superSay.servlets.CheckCommentsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>CheckComments</servlet-name>
+      <url-pattern>/CheckComments</url-pattern>
+    </servlet-mapping>
 </web-app>
